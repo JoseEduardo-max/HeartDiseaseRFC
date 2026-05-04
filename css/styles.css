@@ -1,0 +1,46 @@
+.image-row {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.image-row img {
+  width: 500px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.image-row img:hover {
+  transform: scale(1.05);
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+}
+
+.modal.active {
+  display: flex;
+}

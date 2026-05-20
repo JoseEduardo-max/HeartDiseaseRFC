@@ -11,238 +11,242 @@
 </head>
 
 <body>
-<div class="reveal">
-<div class="slides">
+    <div class="reveal">
+        <div class="slides">
 
-<!-- CAPA -->
-<section>
-    <h1>❤️ Heart Disease</h1>
-    <p>Classificação com Random Forest</p>
+            <!-- CAPA -->
+            <section>
+                <h1>❤️ Heart Disease</h1>
+                <p>Classificação com Random Forest</p>
+                <a href="https://github.com/JoseEduardo-max/RFCHeartDisease" target="_blank" class="btn-explicacao">
+                    🔍 link para o repositório com o Código
+                </a>
 
-    <aside class="notes">
-        Hoje vou apresentar um modelo de Machine Learning
-        aplicado à classificação de doenças cardíacas.
-        O objetivo é prever se um paciente tem ou não a doença
-        com base em dados clínicos.
-    </aside>
-</section>
+                <aside class="notes">
+                    Hoje vou apresentar um modelo de Machine Learning
+                    aplicado à classificação de doenças cardíacas.
+                    O objetivo é prever se um paciente tem ou não a doença
+                    com base em dados clínicos.
+                </aside>
+            </section>
 
-<!-- OBJETIVO -->
-<section>
-    <h2>🎯 Objetivo</h2>
-    <div class="card">
-        <ul>
-            <li>Classificar pacientes (doença ou não)</li>
-            <li>Comparar diferentes modelos</li>
-            <li>Analisar impacto dos parâmetros</li>
-        </ul>
+            <!-- OBJETIVO -->
+            <section>
+                <h2>🎯 Objetivo</h2>
+                <div class="card">
+                    <ul>
+                        <li>Classificar pacientes (doença ou não)</li>
+                        <li>Comparar diferentes modelos</li>
+                        <li>Analisar impacto dos parâmetros</li>
+                    </ul>
+                </div>
+
+                <aside class="notes">
+                    O foco do trabalho é classificação binária.
+                    Também buscamos entender como os parâmetros influenciam o modelo.
+                    E comparar o Random Forest com uma Decision Tree.
+                </aside>
+            </section>
+
+            <!-- DATASET -->
+            <section>
+                <h2>📊 Base de Dados</h2>
+                <div class="card">
+                    <ul>
+                        <li>Dados clínicos reais</li>
+                        <li>Ex: idade, colesterol, pressão</li>
+                        <li>Target: presença de doença</li>
+                        <li>Problema de classificação supervisionada</li>
+                    </ul>
+                </div>
+
+                <div class="image-row">
+                    <img src="img/dataset heart.png" onclick="openModal('img6')">
+                </div>
+
+                <aside class="notes">
+                    O dataset contém informações médicas de pacientes.
+                    As features representam características clínicas.
+                    O target indica se há doença cardíaca.
+                    É um problema supervisionado, pois temos a resposta correta.
+                </aside>
+            </section>
+
+            <section>
+                <div class="image-row">
+                    <img src="img/exemplo de como fica a arvore1.png" onclick="openModal('img7')">
+                </div>
+            </section>
+
+            <!-- MATRIZ -->
+            <section>
+                <h2>📉 Matriz de Confusão</h2>
+
+                <div class="image-row">
+                    <img src="img/matrizConfusaoM2.png" onclick="openModal('img3')">
+                </div>
+
+                <div class="card">
+                    <ul>
+                        <li>Mostra acertos e erros</li>
+                        <li>Verdadeiro positivo / negativo</li>
+                        <li>Falsos positivos e negativos</li>
+                    </ul>
+                </div>
+
+                <aside class="notes">
+                    A matriz de confusão mostra como o modelo performa.
+                    Verdadeiros positivos são acertos de doença.
+                    Verdadeiros negativos são acertos sem doença.
+                    Já os erros são falsos positivos e falsos negativos.
+                    Isso é importante porque na saúde erros podem ser críticos.
+                </aside>
+            </section>
+
+            <!-- FEATURE IMPORTANCE -->
+            <section>
+                <h2>📊 Importância das Features</h2>
+
+                <div class="image-row">
+                    <img src="img/impFeaturesM2.png" onclick="openModal('img4')">
+                </div>
+
+                <div class="card">
+                    <ul>
+                        <li>Identifica variáveis mais relevantes</li>
+                        <li>Ajuda na interpretação do modelo</li>
+                        <li>Ex: colesterol, idade, pressão</li>
+                    </ul>
+                </div>
+
+                <aside class="notes">
+                    O Random Forest permite analisar a importância das variáveis.
+                    Isso mostra quais fatores mais influenciam a decisão.
+                    Em contexto médico, isso é extremamente útil.
+                </aside>
+            </section>
+
+            <!-- COMPARAÇÃO -->
+            <section>
+                <h2>⚔️ Comparação de Modelos</h2>
+
+                <div class="image-row">
+                    <img src="img/comparacaoModelos.png" onclick="openModal('img5')">
+                </div>
+
+                <div class="card">
+                    <ul>
+                        <li>Random Forest vs Decision Tree</li>
+                        <li>RFC teve melhor desempenho</li>
+                        <li>Mais robusto e estável</li>
+                    </ul>
+                </div>
+
+                <aside class="notes">
+                    Aqui comparamos os modelos.
+                    O Random Forest teve melhor desempenho.
+                    Isso acontece porque ele combina várias árvores.
+                    Já a Decision Tree é mais simples e tende a errar mais.
+                </aside>
+            </section>
+
+            <!-- ANALISE -->
+            <section>
+                <h2>🧠 Análise dos Resultados</h2>
+                <div class="card">
+                    <ul>
+                        <li>Mais árvores → melhor precisão</li>
+                        <li>Controle de profundidade → evita overfitting</li>
+                        <li>RFC generaliza melhor</li>
+                    </ul>
+                </div>
+
+                <aside class="notes">
+                    A análise mostra que aumentar árvores melhora o desempenho.
+                    Controlar a profundidade evita que o modelo decore os dados.
+                    O Random Forest conseguiu generalizar melhor que a árvore única.
+                </aside>
+            </section>
+
+            <!-- CONCLUSÃO -->
+            <section>
+                <h2>🎤 Conclusão</h2>
+                <div class="card">
+                    <ul>
+                        <li>Random Forest foi o melhor modelo</li>
+                        <li>Maior precisão e estabilidade</li>
+                        <li>Aplicável em problemas reais</li>
+                    </ul>
+                </div>
+
+                <aside class="notes">
+                    Concluindo, o Random Forest apresentou melhor desempenho.
+                    Ele é mais robusto e confiável.
+                    E pode ser aplicado em problemas reais, como diagnóstico médico.
+                </aside>
+            </section>
+
+        </div>
     </div>
 
-    <aside class="notes">
-        O foco do trabalho é classificação binária.
-        Também buscamos entender como os parâmetros influenciam o modelo.
-        E comparar o Random Forest com uma Decision Tree.
-    </aside>
-</section>
-
-<!-- DATASET -->
-<section>
-    <h2>📊 Base de Dados</h2>
-    <div class="card">
-        <ul>
-            <li>Dados clínicos reais</li>
-            <li>Ex: idade, colesterol, pressão</li>
-            <li>Target: presença de doença</li>
-            <li>Problema de classificação supervisionada</li>
-        </ul>
+    <!-- MODAIS -->
+    <div id="img1" class="modal" onclick="closeModal(event)">
+        <img src="img/modelo1.png">
     </div>
 
-    <div class="image-row">
-        <img src="img/dataset heart.png" onclick="openModal('img6')">
+    <div id="img2" class="modal" onclick="closeModal(event)">
+        <img src="img/modelo2.png">
     </div>
 
-    <aside class="notes">
-        O dataset contém informações médicas de pacientes.
-        As features representam características clínicas.
-        O target indica se há doença cardíaca.
-        É um problema supervisionado, pois temos a resposta correta.
-    </aside>
-</section>
-
-<section>
-     <div class="image-row">
-        <img src="img/exemplo de como fica a arvore1.png" onclick="openModal('img7')">
-    </div>
-</section>
-
-<!-- MATRIZ -->
-<section>
-    <h2>📉 Matriz de Confusão</h2>
-
-    <div class="image-row">
-        <img src="img/matrizConfusaoM2.png" onclick="openModal('img3')">
+    <div id="img3" class="modal" onclick="closeModal(event)">
+        <img src="img/matrizConfusaoM2.png">
     </div>
 
-    <div class="card">
-        <ul>
-            <li>Mostra acertos e erros</li>
-            <li>Verdadeiro positivo / negativo</li>
-            <li>Falsos positivos e negativos</li>
-        </ul>
+    <div id="img4" class="modal" onclick="closeModal(event)">
+        <img src="img/impFeaturesM2.png">
     </div>
 
-    <aside class="notes">
-        A matriz de confusão mostra como o modelo performa.
-        Verdadeiros positivos são acertos de doença.
-        Verdadeiros negativos são acertos sem doença.
-        Já os erros são falsos positivos e falsos negativos.
-        Isso é importante porque na saúde erros podem ser críticos.
-    </aside>
-</section>
-
-<!-- FEATURE IMPORTANCE -->
-<section>
-    <h2>📊 Importância das Features</h2>
-
-    <div class="image-row">
-        <img src="img/impFeaturesM2.png" onclick="openModal('img4')">
+    <div id="img5" class="modal" onclick="closeModal(event)">
+        <img src="img/comparacaoModelos.png">
     </div>
 
-    <div class="card">
-        <ul>
-            <li>Identifica variáveis mais relevantes</li>
-            <li>Ajuda na interpretação do modelo</li>
-            <li>Ex: colesterol, idade, pressão</li>
-        </ul>
+    <div id="img6" class="modal" onclick="closeModal(event)">
+        <img src="img/dataset heart.png">
     </div>
 
-    <aside class="notes">
-        O Random Forest permite analisar a importância das variáveis.
-        Isso mostra quais fatores mais influenciam a decisão.
-        Em contexto médico, isso é extremamente útil.
-    </aside>
-</section>
-
-<!-- COMPARAÇÃO -->
-<section>
-    <h2>⚔️ Comparação de Modelos</h2>
-
-    <div class="image-row">
-        <img src="img/comparacaoModelos.png" onclick="openModal('img5')">
+    <div id="img7" class="modal" onclick="closeModal(event)">
+        <img src="img/exemplo de como fica a arvore1.png">
     </div>
 
-    <div class="card">
-        <ul>
-            <li>Random Forest vs Decision Tree</li>
-            <li>RFC teve melhor desempenho</li>
-            <li>Mais robusto e estável</li>
-        </ul>
-    </div>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
 
-    <aside class="notes">
-        Aqui comparamos os modelos.
-        O Random Forest teve melhor desempenho.
-        Isso acontece porque ele combina várias árvores.
-        Já a Decision Tree é mais simples e tende a errar mais.
-    </aside>
-</section>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            transition: 'slide',
+            slideNumber: true
+        });
 
-<!-- ANALISE -->
-<section>
-    <h2>🧠 Análise dos Resultados</h2>
-    <div class="card">
-        <ul>
-            <li>Mais árvores → melhor precisão</li>
-            <li>Controle de profundidade → evita overfitting</li>
-            <li>RFC generaliza melhor</li>
-        </ul>
-    </div>
+        function openModal(id) {
+            document.getElementById(id).classList.add("active");
+            Reveal.configure({ keyboard: false });
+        }
 
-    <aside class="notes">
-        A análise mostra que aumentar árvores melhora o desempenho.
-        Controlar a profundidade evita que o modelo decore os dados.
-        O Random Forest conseguiu generalizar melhor que a árvore única.
-    </aside>
-</section>
+        function closeModal(event) {
+            if (event.target.classList.contains("modal")) {
+                event.target.classList.remove("active");
+                Reveal.configure({ keyboard: true });
+            }
+        }
 
-<!-- CONCLUSÃO -->
-<section>
-    <h2>🎤 Conclusão</h2>
-    <div class="card">
-        <ul>
-            <li>Random Forest foi o melhor modelo</li>
-            <li>Maior precisão e estabilidade</li>
-            <li>Aplicável em problemas reais</li>
-        </ul>
-    </div>
-
-    <aside class="notes">
-        Concluindo, o Random Forest apresentou melhor desempenho.
-        Ele é mais robusto e confiável.
-        E pode ser aplicado em problemas reais, como diagnóstico médico.
-    </aside>
-</section>
-
-</div>
-</div>
-
-<!-- MODAIS -->
-<div id="img1" class="modal" onclick="closeModal(event)">
-    <img src="img/modelo1.png">
-</div>
-
-<div id="img2" class="modal" onclick="closeModal(event)">
-    <img src="img/modelo2.png">
-</div>
-
-<div id="img3" class="modal" onclick="closeModal(event)">
-    <img src="img/matrizConfusaoM2.png">
-</div>
-
-<div id="img4" class="modal" onclick="closeModal(event)">
-    <img src="img/impFeaturesM2.png">
-</div>
-
-<div id="img5" class="modal" onclick="closeModal(event)">
-    <img src="img/comparacaoModelos.png">
-</div>
-
-<div id="img6" class="modal" onclick="closeModal(event)">
-    <img src="img/dataset heart.png">
-</div>
-
-<div id="img7" class="modal" onclick="closeModal(event)">
-    <img src="img/exemplo de como fica a arvore1.png">
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
-
-<script>
-Reveal.initialize({
-    hash: true,
-    transition: 'slide',
-    slideNumber: true
-});
-
-function openModal(id) {
-    document.getElementById(id).classList.add("active");
-    Reveal.configure({ keyboard: false });
-}
-
-function closeModal(event) {
-    if (event.target.classList.contains("modal")) {
-        event.target.classList.remove("active");
-        Reveal.configure({ keyboard: true });
-    }
-}
-
-document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") {
-        document.querySelectorAll(".modal").forEach(m => m.classList.remove("active"));
-        Reveal.configure({ keyboard: true });
-    }
-});
-</script>
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape") {
+                document.querySelectorAll(".modal").forEach(m => m.classList.remove("active"));
+                Reveal.configure({ keyboard: true });
+            }
+        });
+    </script>
 
 </body>
+
 </html>
